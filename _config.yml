@@ -132,7 +132,7 @@ author:
 # Site Footer
 footer:
   links:
-     - label: "Email"
+    - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
        url: "mailto:mino210125@naver.com"
     - label: "Twitter"
