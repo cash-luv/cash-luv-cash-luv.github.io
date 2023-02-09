@@ -104,7 +104,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Choi minho"
+    name             : "Choi minho"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "**2023년 2월 14일 개발공부 시작!!**<br>매일 발전하는<br>모습을 지켜봐주세요"
   location         : "Republic of Korea"
