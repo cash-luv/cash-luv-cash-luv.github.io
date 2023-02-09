@@ -109,7 +109,7 @@ author:
   bio              : "**2023년 2월 14일 개발공부 시작!!**<br>매일 발전하는<br>모습을 지켜봐주세요"
   location         : "Republic of Korea"
   email            :
-  links:
+  links:  
       - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
        url: "mino210125@naver.com"
