@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "2023년 2월 9일 개발 교육 시작"
+title                    : "최민호의 개발일지 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "일보아카데미 최민호"
-description              : "개발일지 블로그."
+name                     : " Choi Min ho "
+description              : " 개발일지 블로그 "
 url                      : "https://cash-luv.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
