@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+ minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko-KR"
@@ -104,15 +104,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Choi minho"
+    name             : "Choi minho"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "**2023년 2월 14일 개발공부 시작!!**<br>매일 발전하는<br>모습을 지켜봐주세요"
   location         : "Republic of Korea"
   email            :
-  links:
-    - label: "Email"
+  links:  
+        - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-       url: "mailto:mino210125@naver.com"
+       url: "mino210125@naver.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -132,9 +132,6 @@ author:
 # Site Footer
 footer:
   links:
-     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-       url: "mailto:mino210125@naver.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url:
