@@ -4,16 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/index.js" defer></script>
     <!-- defer body를 다 읽고 script를 읽음 -->
-    <title>Document</title>
+    <title>포토폴리오</title>
   </head>
   <body>
-    <h2>최민호의 홈페이지</h2>
-    <a href="signup.html">회원가입</a>
-    <button onclick="goLogin()">로그인</button>
-    <button onclick="goHome()">홈으로이동</button>
+    <header>
+      <h1>내 포토폴리오</h1>
+      <button onclick="goLogin()"><b>로그인</b></button>
+      <button onclick="goHome()"><b>홈으로이동</b></button>
+      <button onclick="goSignup()"><b>회원가입</b></button>
+    </header>
+
+    <section class="gallery">
+      <div class="image">
+        <img src="image1.jpg" alt="이미지 설명" />
+        <p>이미지1 설명</p>
+      </div>
+      <div class="image">
+        <img src="image2.jpg" alt="이미지 설명" />
+        <p>이미지2 설명</p>
+      </div>
+      <div class="image">
+        <img src="image3.jpg" alt="이미지 설명" />
+        <p>이미지3 설명</p>
+      </div>
+      <!-- 추가 이미지를 여기에 넣으세요 -->
+    </section>
+    <footer>
+      <p>연락처: mino210125@naver.com</p>
+    </footer>
   </body>
   <script>
     const goLogin = () => {
@@ -21,6 +42,9 @@
     };
     const goHome = () => {
       history.back();
+    };
+    const goSignup = () => {
+      location.href = "signup.html";
     };
   </script>
 </html>
