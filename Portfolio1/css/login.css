@@ -71,3 +71,25 @@ button.btn {
 button.btn:hover {
   background-color: #0056b3;
 }
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button.login-btn {
+  width: 48%;
+  background-color: #007bff;
+}
+
+button.login-btn:hover {
+  background-color: #0056b3;
+}
+
+button.cancel-btn {
+  width: 48%;
+  background-color: #f44336;
+}
+
+button.cancel-btn:hover {
+  background-color: #d32f2f;
+}

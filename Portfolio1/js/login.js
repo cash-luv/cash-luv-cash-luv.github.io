@@ -13,3 +13,6 @@ document
       alert("아이디와 비밀번호를 입력해 주세요.");
     }
   });
+function cancel() {
+  history.back();
+}
