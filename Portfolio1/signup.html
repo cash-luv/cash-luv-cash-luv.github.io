@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+
+    <script src="js/signup.js" defer></script>
+  </head>
+  <body>
+    <form
+      action="action_page.php"
+      id="signupForm"
+      style="border: 1px solid #ccc"
+    >
+      <div class="container">
+        <h1>회원가입</h1>
+        <p>회원정보를 입력해주세요</p>
+        <hr />
+        <label for="memberUserId"><b>아이디</b></label>
+
+        <input
+          type="text"
+          class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+          id="memberUserId"
+          required
+        />
+        <h6 id="id_result"></h6>
+
+        <i class="bi bi-lock-fill" id="lock1"></i>
+        <label for="psw"><b>패스워드</b></label>
+        <input
+          type="password"
+          class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+          placeholder="비밀번호"
+          id="psw"
+          name="psw"
+          required
+        />
+
+        <h6 id="password-result"></h6>
+        <i class="bi bi-lock-fill" id="lock2"></i>
+        <label for="psw-repeat"><b>패스워드 확인</b></label>
+        <input
+          type="password"
+          class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+          placeholder="비밀번호 확인"
+          id="psw-repeat"
+          name="psw-repeat"
+          required
+        />
+
+        <h6 id="password-result1"></h6>
+
+        <label for="name"><b>이름</b></label>
+        <input
+          type="text"
+          class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+          placeholder="이름"
+          id="name"
+          name="name"
+          required
+        />
+
+        <label for="email"><b>이메일</b></label>
+        <input
+          type="text"
+          class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+          placeholder="아이디(이메일)"
+          id="email"
+          name="email"
+          required
+        />
+        <span>@</span>
+        <select id="email-domain-select" onchange="domain_select()">
+          <option value="">직접입력</option>
+          <option value="naver.com">네이버</option>
+          <option value="gmail.com">구글</option>
+          <option value="hanmail.com">한메일</option>
+        </select>
+        <input
+          type="text"
+          class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+          id="email-domain"
+          name="emailDomain"
+        />
+
+        <div id="number">
+          <label for="memberMobile"><b>전화번호</b></label>
+          <select id="mobileCarrier">
+            <option value="통신사">통신사</option>
+            <option>SKT</option>
+            <option>KT</option>
+            <option>LG</option>
+            <option>MVNO</option>
+          </select>
+          <input
+            type="tel"
+            placeholder="핸드폰 번호"
+            id="memberMobile"
+            name="memberMobile"
+            pattern="010-[0-9]{4}-[0-9]{4}"
+            class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+            required
+          />
+          <p id="mobileError" class="error"></p>
+        </div>
+        <div id="gender">
+          <label><b>성별</b></label
+          ><br />
+          <label for="male">남</label>
+          <input
+            type="radio"
+            id="male"
+            name="memberGender"
+            value="남"
+            required
+          />
+          <label for="female">녀</label>
+          <input
+            type="radio"
+            id="female"
+            name="memberGender"
+            value="녀"
+            required
+          />
+        </div>
+        <div id="map">
+          <label for="memberAddress"><b>주소</b></label>
+          <input
+            type="text"
+            class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+            id="memberAddress"
+            required
+          />
+          <button type="button" id="findPostcode">우편번호 찾기</button>
+        </div>
+        <label>
+          <input
+            type="checkbox"
+            checked="checked"
+            name="remember"
+            style="margin-bottom: 15px"
+          />
+          Remember me
+        </label>
+        <p>
+          계정을 생성하면 귀하는 당사에 동의합니다
+          <a
+            href="https://www.icia.co.kr/course/view/NONE/1/71"
+            style="color: dodgerblue"
+            ><br />
+            <b>인천일보아카데미 수강생 최민호</b></a
+          >
+        </p>
+
+        <div class="clearfix">
+          <button type="button" class="cancelbtn">취소</button>
+          <button type="submit" id="submit" class="signupbtn">회원가입</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
