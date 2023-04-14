@@ -5,35 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <script src="js/index.js" defer></script>
     <!-- defer body를 다 읽고 script를 읽음 -->
-    <title>포토폴리오</title>
+    <title>포트폴리오</title>
   </head>
   <body>
     <header>
-      <h1>내 포토폴리오</h1>
-      <button onclick="goLogin()"><b>로그인</b></button>
-      <button onclick="goHome()"><b>홈으로이동</b></button>
-      <button onclick="goSignup()"><b>회원가입</b></button>
+      <h1>내 포트폴리오</h1>
+      <button onclick="goHome()" class="btn btn-outline-light">
+        <b>홈으로이동</b>
+      </button>
     </header>
 
     <section class="gallery">
       <div class="image">
-        <img src="image1.jpg" alt="이미지 설명" />
-        <p>이미지1 설명</p>
+        <img
+          src="/images/2023-02-21-3/2015-03-07-22-20-49_deco.jpg"
+          alt="회원가입 페이지 입니다"
+        />
+        <p><b>회원가입 버튼을 누르면 이동합니다</b></p>
+        <button onclick="goSignup()" class="btn btn-outline-dark">
+          <b>회원가입</b>
+        </button>
       </div>
       <div class="image">
-        <img src="image2.jpg" alt="이미지 설명" />
-        <p>이미지2 설명</p>
+        <img
+          src="/images/2023-02-21-3/2015-03-07-22-20-49_deco.jpg"
+          alt="이미지 설명"
+        />
+        <p><b>로그인 버튼을 누르면 이동합니다</b></p>
+        <button onclick="goLogin()" class="btn btn-outline-dark lg">
+          <b>로그인</b>
+        </button>
       </div>
       <div class="image">
-        <img src="image3.jpg" alt="이미지 설명" />
-        <p>이미지3 설명</p>
+        <img
+          src="/images/2023-02-21-3/2015-03-07-22-20-49_deco.jpg"
+          alt="이미지 설명"
+        />
+        <p><b>다른 포트폴리오 없음</b></p>
       </div>
       <!-- 추가 이미지를 여기에 넣으세요 -->
     </section>
     <footer>
       <p>연락처: mino210125@naver.com</p>
+      <p>인천일보아카데미 최민호수강생</p>
     </footer>
   </body>
   <script>

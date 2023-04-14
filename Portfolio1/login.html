@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <script src="js/login.js" defer></script>
+    <title>로그인 페이지</title>
   </head>
   <body>
-    <h2>로그인 페이지</h2>
-    <button onclick="goindex()">index로 가기</button>
+    <div class="login-container">
+      <h1>로그인</h1>
+      <form id="login-form">
+        <label for="username">아이디:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit" class="btn">로그인</button>
+      </form>
+    </div>
+    <script src="login.js"></script>
   </body>
   <script>
     const goindex = () => {
