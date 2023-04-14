@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입 페이지</title>
+        <link rel="stylesheet" href="../css/bootstrap.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+        <!-- <img src="../images/github.2cf8311b.jpg" alt="Nature" class="responsive" /> -->
+        <style>
+            /* body {
+                background-image: url('../images/near-space-photography-20km-above-260nw-306159347.webp');
+                background-repeat: no-repeat;
+                background-position: center center;
+            } */
+
+            * {
+                box-sizing: border-box;
+            }
+            html {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            /* Full-width input fields */
+            input[type='text'],
+            input[type='password'],
+            input[type='tel'],
+            input[type='radio'] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+            }
+
+            input[type='text']:focus,
+            input[type='password']:focus,
+            input[type='tel']:focus input[type='radig']:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+
+            hr {
+                border: 1px solid #f1f1f1;
+                margin-bottom: 25px;
+            }
+
+            /* Set a style for all buttons */
+            button {
+                background-color: #04aa6d;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+            }
+
+            button:hover {
+                opacity: 1;
+            }
+
+            /* Extra styles for the cancel button */
+            .cancelbtn {
+                padding: 14px 20px;
+                background-color: #f44336;
+            }
+
+            /* Float cancel and signup buttons and add an equal width */
+            .cancelbtn,
+            .signupbtn {
+                float: left;
+                width: 50%;
+            }
+
+            /* Add padding to container elements */
+            .container {
+                padding: 16px;
+            }
+
+            /* Clear floats */
+            .clearfix::after {
+                content: '';
+                clear: both;
+                display: table;
+            }
+
+            /* Change styles for cancel button and signup button on extra small screens */
+            @media screen and (max-width: 300px) {
+                .cancelbtn,
+                .signupbtn {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <form action="action_page.php" id="signupForm" style="border: 1px solid #ccc">
+            <div class="container">
+                <h1>회원가입</h1>
+                <p>회원정보를 입력해주세요</p>
+                <hr />
+                <label for="memberUserId"><b>아이디</b></label>
+
+                <input
+                    type="text"
+                    class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                    id="memberUserId"
+                    required
+                />
+                <h6 id="id_result"></h6>
+
+                <i class="bi bi-lock-fill" id="lock1"></i>
+                <label for="psw"><b>패스워드</b></label>
+                <input
+                    type="password"
+                    class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                    placeholder="비밀번호"
+                    id="psw"
+                    name="psw"
+                    required
+                />
+
+                <h6 id="password-result"></h6>
+                <i class="bi bi-lock-fill" id="lock2"></i>
+                <label for="psw-repeat"><b>패스워드 확인</b></label>
+                <input
+                    type="password"
+                    class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                    placeholder="비밀번호 확인"
+                    id="psw-repeat"
+                    name="psw-repeat"
+                    required
+                />
+
+                <h6 id="password-result1"></h6>
+
+                <label for="name"><b>이름</b></label>
+                <input
+                    type="text"
+                    class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                    placeholder="이름"
+                    id="name"
+                    name="name"
+                    required
+                />
+
+                <label for="email"><b>이메일</b></label>
+                <input
+                    type="text"
+                    class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                    placeholder="아이디(이메일)"
+                    id="email"
+                    name="email"
+                    required
+                />
+                <span>@</span>
+                <select id="email-domain-select" onchange="domain_select()">
+                    <option value="">직접입력</option>
+                    <option value="naver.com">네이버</option>
+                    <option value="gmail.com">구글</option>
+                    <option value="hanmail.com">한메일</option>
+                </select>
+                <input
+                    type="text"
+                    class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                    id="email-domain"
+                    name="emailDomain"
+                />
+
+                <div id="number">
+                    <label for="memberMobile"><b>전화번호</b></label>
+                    <select id="mobileCarrier">
+                        <option value="통신사">통신사</option>
+                        <option>SKT</option>
+                        <option>KT</option>
+                        <option>LG</option>
+                        <option>MVNO</option>
+                    </select>
+                    <input
+                        type="tel"
+                        placeholder="핸드폰 번호"
+                        id="memberMobile"
+                        name="memberMobile"
+                        pattern="010-[0-9]{4}-[0-9]{4}"
+                        class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                        required
+                    />
+                    <p id="mobileError" class="error"></p>
+                </div>
+                <div id="gender">
+                    <label><b>성별</b></label
+                    ><br />
+                    <label for="male">남</label>
+                    <input type="radio" id="male" name="memberGender" value="남" required />
+                    <label for="female">녀</label>
+                    <input type="radio" id="female" name="memberGender" value="녀" required />
+                </div>
+                <div id="map">
+                    <label for="memberAddress"><b>주소</b></label>
+                    <input
+                        type="text"
+                        class="form-control border-success,p-3 bg-info bg-opacity-10 border border-info border-start-2 rounded-end"
+                        id="memberAddress"
+                        required
+                    />
+                    <button type="button" id="findPostcode">우편번호 찾기</button>
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px" /> Remember me
+                </label>
+                <p>
+                    계정을 생성하면 귀하는 당사에 동의합니다
+                    <a href="https://www.icia.co.kr/course/view/NONE/1/71" style="color: dodgerblue"
+                        ><br />
+                        <b>인천일보아카데미 수강생 최민호</b></a
+                    >
+                </p>
+
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn">취소</button>
+                    <button type="submit" id="submit" class="signupbtn">회원가입</button>
+                </div>
+            </div>
+        </form>
+    </body>
+    <script>
+        // id 체크
+        const userNameInput = document.getElementById('memberUserId');
+        const result2 = document.getElementById('id_result');
+        const usernamePattern = /^[a-z0-9-_]{5,10}$/;
+
+        userNameInput.addEventListener('blur', () => {
+            if (userNameInput.value.length == 0) {
+                result2.style.color = 'red';
+                result2.innerHTML = '필수 입력입니다 ';
+            } else if (!usernamePattern.test(userNameInput.value)) {
+                id_result.textContent = '조건에 맞는 아이디를 입력해주세요.';
+                result2.style.color = 'red';
+            } else {
+                id_result.textContent = '훌륭한 아이디네요^^';
+                result2.style.color = 'green';
+            }
+        });
+        // 비밀번호 체크
+        const passwordInput = document.getElementById('psw');
+        const passwordError = document.getElementById('password-result');
+        const lock1 = document.getElementById('lock1');
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!#$-_])[A-Za-z\d!#$-_]{6,18}$/;
+
+        passwordInput.addEventListener('blur', () => {
+            if (passwordInput.value.length == 0) {
+                lock1.className = 'bi bi-lock-fill';
+                passwordError.style.color = 'red';
+                lock1.style.color = 'red';
+                passwordError.innerHTML = '필수 입력입니다';
+            } else if (!passwordPattern.test(passwordInput.value)) {
+                lock1.className = 'bi bi-lock-fill';
+                passwordError.style.color = 'red';
+                lock1.style.color = 'red';
+                passwordError.textContent = '조건에 맞는 비밀번호를 입력해주세요.';
+            } else {
+                passwordError.style.color = 'green';
+                lock1.className = 'bi bi-unlock-fill';
+                lock1.style.color = 'green';
+                passwordError.textContent = '좋은 비밀번호 입니다';
+            }
+        });
+        // 비밀번호 확인 체크
+        const passwordConfirmInput = document.getElementById('psw-repeat');
+        const member_password1 = document.getElementById('psw-repeat').value;
+        const passwordConfirmError = document.getElementById('password-result1');
+        const lock2 = document.getElementById('lock2');
+        passwordConfirmInput.addEventListener('blur', () => {
+            if (passwordConfirmInput.value.length == 0) {
+                passwordConfirmError.style.color = 'red';
+                lock2.style.color = 'red';
+                passwordConfirmError.innerHTML = '필수입니다';
+            } else if (passwordInput.value !== passwordConfirmInput.value) {
+                passwordConfirmError.style.color = 'red';
+                passwordConfirmError.textContent = '비밀번호가 일치하지 않습니다.';
+                lock2.className = 'bi bi-lock-fill';
+                lock2.style.color = 'red';
+            } else if (passwordInput.value == passwordConfirmInput.value) {
+                passwordConfirmError.textContent = '비밀번호가 일치합니다';
+                lock2.className = 'bi bi-unlock-fill';
+                lock2.style.color = 'green';
+                passwordConfirmError.style.color = 'green';
+            }
+        });
+        // 핸드폰번호 체크
+        const memberMobile = document.getElementById('memberMobile');
+        const mobileError = document.getElementById('mobileError');
+
+        memberMobile.addEventListener('blur', () => {
+            if (!memberMobile.validity.valid) {
+                mobileError.style.color = 'red';
+                mobileError.textContent = '휴대폰 번호를 정확하게 입력하세요.';
+            } else {
+                mobileError.style.color = 'green';
+                mobileError.textContent = '인증되었습니다!';
+            }
+        });
+        // 이메일체크;
+        const domain_select = () => {
+            const domain = document.getElementById('email-domain-select');
+            const emailInput = document.getElementById('email-domain');
+
+            emailInput.value = domain.value;
+        };
+
+        const findPostcode = document.getElementById('findPostcode');
+        const memberAddress = document.getElementById('memberAddress');
+        const signupForm = document.getElementById('signupForm');
+
+        findPostcode.addEventListener('click', () => {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    memberAddress.value = data.roadAddress;
+                },
+            }).open();
+        });
+
+        signupForm.addEventListener('submit', (event) => {
+            if (
+                !usernamePattern.test(userNameInput.value) ||
+                !passwordPattern.test(passwordInput.value) ||
+                passwordInput.value !== passwordConfirmInput.value ||
+                !memberMobile.validity.valid
+            ) {
+                event.preventDefault();
+                alert('입력한 정보를 확인해주세요.');
+            }
+        });
+    </script>
+</html>

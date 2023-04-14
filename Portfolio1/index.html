@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/index.js" defer></script>
+    <!-- defer body태그를 다읽고 나중에 script를 읽음 (우선순위바꿈) -->
+  </head>
+  <body>
+    <h2>어서오세요~</h2>
+    <a href="save.html">회원가입</a>
+    <button onclick="gologin()">로그인</button>
+    <button onclick="fun1()">함수호출</button>
+    <button onclick="goindex()"><h2>Home으로 이동</h2></button>
+  </body>
+  <script>
+    const gologin = () => {
+      location.href = "login.html";
+    };
+    const goindex = () => {
+      history.back();
+    };
+  </script>
+</html>
