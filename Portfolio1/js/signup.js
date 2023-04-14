@@ -106,3 +106,6 @@ signupForm.addEventListener("submit", (event) => {
     alert("입력한 정보를 확인해주세요.");
   }
 });
+const cancel = () => {
+  history.back();
+};
