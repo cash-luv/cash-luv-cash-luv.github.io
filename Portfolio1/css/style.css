@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -79,4 +80,16 @@ button:hover {
   .signupbtn {
     width: 100%;
   }
+}
+body {
+  font-family: "Dongle", sans-serif;
+  background-image: url("/images/back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
 }
