@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
+.portfolio .title::after {
+  content: "인천일보아카데미";
+}
+.portfolio {
+  padding: 70px 0;
+  transition: all 0.3s ease;
+}
+
+.portfolio .portfolio-content {
+  margin-bottom: 100px;
+}
+
+.portfolio .portfolio-content .left {
+  width: 32%;
+}
+
+.portfolio .portfolio-content .center {
+  width: 32%;
+}
+
+.portfolio .portfolio-content .right {
+  width: 32%;
+}
+
+.portfolioe .portfolio-content a {
+  display: flex;
+  text-align: center;
+  color: black;
+}
+
+.portfolio .portfolio-content a,
+.portfolio .portfolio-content a:visited,
+.portfolio .portfolio-content a:active,
+.portfolio .portfolio-content a:hover {
+  text-decoration: none;
+}
+
+.portfolio .portfolio-content .site {
+  /* background-color: rgb(240, 236, 236); */
+
+  background-color: rgb(255, 164, 45);
+  border-radius: 100px;
+  padding: 50px 35px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.portfolio .portfolio-content .site img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: 5px solid rgb(255, 143, 39);
+  transition: all 0.3s ease;
+}
+
+.portfolio .portfolio-content .site-text {
+  font-weight: 600;
+  font-family: "Dongle", sans-serif;
+  color: white;
+  font-size: 4.25rem;
+}
+
+.portfolio .portfolio-content p {
+  font-size: 2.25rem;
+  text-align: justify;
+  font-family: "Dongle", sans-serif;
+  color: white;
+}
+
+.portfolio .portfolio-content .site:hover {
+  /* background-color: rgb(25, 8, 53); */
+  background-color: rgb(25, 8, 53);
+  color: white;
+  transform: scale(1.05);
+}
+
+.portfolio .portfolio-content .site:hover img {
+  border-color: white;
+}
