@@ -27,10 +27,3 @@ var typed = new Typed(".typing2", {
   backSpeed: 60,
   loop: true,
 });
-
-var typed = new Typed(".typing3", {
-  strings: ["최민호", "이신욱", "이호섭", "이기홍", "남윤하"],
-  typeSpeed: 100,
-  backSpeed: 60,
-  loop: true,
-});
