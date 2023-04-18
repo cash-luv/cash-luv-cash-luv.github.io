@@ -76,21 +76,21 @@
 }
 
 .skills-content .right .html::before {
-  width: 50%;
+  width: 30%;
 }
 
 .skills-content .right .css::before {
-  width: 30%;
+  width: 20%;
 }
 
 .skills-content .right .js::before {
-  width: 40%;
+  width: 20%;
 }
 
 .skills-content .right .java::before {
-  width: 40%;
+  width: 35%;
 }
 
 .skills-content .right .oracle::before {
-  width: 30%;
+  width: 10%;
 }
